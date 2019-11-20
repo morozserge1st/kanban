@@ -1,60 +1,24 @@
-let dataMock = [
+const data = [
   {
+    id: 1,
     title: 'backlog',
-    issues: [
-      {
-        id: 1,
-        name: 'Login page – performance issues'
-      }
-    ],
+    issues: [],
   },
   {
+    id: 2,
     title: 'ready',
-    issues: [
-      {
-        id: 2,
-        name: 'Sprint bugfix'
-      },
-      {
-        id: 3,
-        name: 'Shop bug1'
-      },
-      {
-        id: 4,
-        name: 'Shop bug2'
-      },
-      {
-        id: 5,
-        name: 'Shop bug3'
-      }
-    ],
+    issues: [],
   },
   {
+    id: 3,
     title: 'in progress',
-    issues: [
-      {
-        id: 6,
-        name: 'Shop bug4'
-      },
-      {
-        id: 7,
-        name: 'Shop bug5'
-      },
-      {
-        id: 8,
-        name: 'Shop bug6'
-      }
-    ],
+    issues: [],
   },
   {
+    id: 4,
     title: 'finished',
-    issues: [
-      {
-        id: 9,
-        name: 'Main page – performance issues'
-      }
-    ],
+    issues: [],
   },
 ]
 
-export default dataMock;
+export default data;
