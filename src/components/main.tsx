@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { CardModel } from '../../types/card-model';
-import { CardContainer } from '../../containers/card-container';
+import { CardModel } from '../types/card-model';
+import { CardContainer } from './card-container';
 
 export interface MainProps {
   items: CardModel[],
   fetching: boolean
-};
+}
 
 const Main: React.FunctionComponent<MainProps> = ({
   items,
@@ -15,14 +15,14 @@ const Main: React.FunctionComponent<MainProps> = ({
     {fetching ? (
       null
     ) : (
-      <>
-        {items.map((item,index) =>
+      <div>
+        {items.map((item, index) => (
           <CardContainer
             key={item.id}
             index={index}
           />
-        )}
-      </>
+        ))}
+      </div>
     )}
   </main>
 );

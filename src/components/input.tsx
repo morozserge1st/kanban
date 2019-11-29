@@ -1,10 +1,10 @@
-import * as React from 'react'
+import * as React from 'react';
 
-interface InputProps {
-  onAdd: (value: string) => void
+export interface InputProps {
+  onClose: (value: string) => void
 }
 
-class Input extends React.Component<InputProps, any> {
+class Input extends React.Component<InputProps> {
   private inputRef = React.createRef<HTMLInputElement>();
 
   componentDidMount(){
@@ -12,18 +12,20 @@ class Input extends React.Component<InputProps, any> {
   }
 
   onBlur = () => {
-    this.props.onAdd(this.inputRef.current!.value);
+    this.props.onClose(this.inputRef.current!.value);
   }
 
   render() {
     return (
-      <input
-        className="input"
-        type="text"
-        defaultValue=""
-        onBlur={this.onBlur}
-        ref={this.inputRef}
-      />
+      <form className="wrap">
+        <input
+          className="input"
+          type="text"
+          defaultValue=""
+          onBlur={this.onBlur}
+          ref={this.inputRef}
+        />
+      </form>
     );
   }
 }

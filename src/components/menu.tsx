@@ -1,17 +1,17 @@
 import * as React from 'react';
 
 interface MenuProps {
-  handleClick: () => void
+  onClick: () => void
 }
 
 class Menu extends React.Component<MenuProps> {
 
   componentDidMount() {
-    document.addEventListener('click', this.props.handleClick);
+    document.addEventListener('click', this.props.onClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.props.handleClick);
+    document.removeEventListener('click', this.props.onClick);
   }
 
   render() {

@@ -3,8 +3,9 @@ import * as React from 'react';
 interface ButtonProps {
   className: string,
   children?: any,
-  onClick?: () => void;
+  onClick?: () => void
 }
+
 const Button: React.FunctionComponent<ButtonProps> = ({
   className,
   children,

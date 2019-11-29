@@ -1,4 +1,4 @@
-const data = [
+const initialData = [
   {
     id: 1,
     title: 'backlog',
@@ -21,4 +21,4 @@ const data = [
   },
 ]
 
-export default data;
+export default initialData;
