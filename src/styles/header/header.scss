@@ -1,0 +1,26 @@
+@import '../color.scss';
+
+.header {
+  background: $bg-dark;
+  display: flex;
+  justify-content: space-between;
+  color: $text-white;
+}
+
+.logo {
+  font-size: 28px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+
+  &__link {
+    margin-left: 10px;
+    color: $text-white;
+    position: relative;
+    top: 5px;
+
+    &:visited {
+      color: $text-white;
+    }
+  }
+}

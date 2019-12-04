@@ -1,0 +1,40 @@
+@import '../color.scss';
+
+.main {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container {
+  overflow-y: auto;
+}
+
+.wrap {
+  margin-right: 12px;
+  border-radius: 5px;
+  background: $bg-white;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.select {
+  background: $bg-white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  height: 41px;
+  border: none;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+
