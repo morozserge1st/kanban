@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface InputProps {
-  onClose: (value: string) => void
+  onBlur: (value: string) => void
 }
 
 class Input extends React.Component<InputProps> {
@@ -12,7 +12,7 @@ class Input extends React.Component<InputProps> {
   }
 
   onBlur = () => {
-    this.props.onClose(this.inputRef.current!.value);
+    this.props.onBlur(this.inputRef.current!.value);
   }
 
   render() {

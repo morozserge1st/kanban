@@ -1,12 +1,11 @@
 import {
   ADD_ISSUE,
   DELETE_ISSUE
-} from '../const/actions';
-import initialData from '../const/ititial-data';
+} from '../constants/actions';
 import { ListState } from '../types/list-state';
 
 export function listReducer(state: ListState = {
-  items: initialData,
+  items: [],
   fetching: false
 }, action: { type: string; payload: {value: any, index: number}}) {
   switch (action.type) {

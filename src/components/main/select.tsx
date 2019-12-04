@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IssueModel } from '../types/issue-model';
+import { IssueModel } from '../../types/issue-model';
 
 export interface SelectProps {
   issues: IssueModel[],

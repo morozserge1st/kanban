@@ -1,4 +1,4 @@
-import * as actions from '../const/actions';
+import * as actions from '../constants/actions';
 import { IssueModel } from '../types/issue-model';
 
 export const onAddIssue = (value: string) => ({type: actions.ON_ADD_ISSUE, payload: { value }});

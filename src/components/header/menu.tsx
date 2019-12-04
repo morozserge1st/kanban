@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../../styles/header/menu.scss';
 
 interface MenuProps {
   onClick: () => void

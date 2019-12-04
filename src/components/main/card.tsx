@@ -1,14 +1,16 @@
 import * as React from 'react';
-import Button from './button';
-import Ellipsis from './icons/ellipsis';
-import { IssueModel } from '../types/issue-model';
+import Button from '../button';
+import Ellipsis from '../../icons/ellipsis';
+import { IssueModel } from '../../types/issue-model';
 import { SelectContainer } from './select-container';
 import Input from './input';
+import '../../styles/main/card.scss';
 
 export interface CardProps {
   title: string,
   issues: IssueModel[],
   index: number,
+  disabled: boolean,
   onMove: (id: number) => void,
   onAdd: (value: string) => void
 }
@@ -40,13 +42,14 @@ class Card extends React.Component<CardProps> {
     const {
       title,
       issues,
-      index
+      index,
+      disabled
     } = this.props;
     const { isOpen } = this.state;
     let button;
 
     if (index === 0) {
-      button = <Input onClose={this.onClose}/>;
+      button = <Input onBlur={this.onClose}/>;
     } else {
       button = <SelectContainer onClose={this.onClose} index={index} />;
     }
@@ -58,7 +61,7 @@ class Card extends React.Component<CardProps> {
           <Ellipsis />
         </div>
 
-        <div className="card__content">
+        <div className="container">
           <div className="card__list">
             {issues.map(issue =>
               <div
@@ -79,6 +82,7 @@ class Card extends React.Component<CardProps> {
           <Button
             className="card__button"
             onClick={this.onOpen}
+            disabled={disabled}
           >
             <span>+</span>Add card
           </Button>

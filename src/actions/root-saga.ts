@@ -1,5 +1,5 @@
 import { takeLatest, put, select } from 'redux-saga/effects';
-import * as actions from '../const/actions';
+import * as actions from '../constants/actions';
 import { IssueModel } from '../types/issue-model';
 import { addIssue, deleteIssue } from './list-action-creators';
 import { RootState } from '../types/root-state';

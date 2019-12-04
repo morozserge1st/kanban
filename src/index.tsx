@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import App from './components/app';
-import './styles/styles.scss';
+import './styles/index.scss';
 import rootReducer from './reducers/root-reducer';
 import { rootSaga } from './actions/root-saga';
 
