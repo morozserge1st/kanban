@@ -1,5 +1,7 @@
-import { ListState } from "./list-state";
+import { ListState } from './list-state';
+import { DialogState } from './dialog-state';
 
 export type RootState = {
-  list: ListState
+  list: ListState,
+  dialog: DialogState
 };

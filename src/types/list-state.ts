@@ -1,4 +1,4 @@
-import { CardModel } from "./card-model";
+import { CardModel } from './card-model';
 
 export type ListState = {
   items: CardModel[],
