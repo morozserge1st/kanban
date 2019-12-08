@@ -8,12 +8,20 @@ interface MenuProps {
 class Menu extends React.Component<MenuProps> {
 
   componentDidMount() {
-    document.addEventListener('click', this.props.onClick);
+    document.addEventListener('click', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.props.onClick);
+    document.removeEventListener('click', this.handleClick);
   }
+
+  handleClick = (e: any) => {
+    if (e.target.className.includes('menu')) {
+      return;
+    }
+    this.props.onClick();
+  }
+
 
   render() {
     return (

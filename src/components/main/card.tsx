@@ -3,10 +3,12 @@ import Button from '../button';
 import Ellipsis from '../../icons/ellipsis';
 import { IssueModel } from '../../types/issue-model';
 import { SelectContainer } from './select-container';
-import Input from './input';
+import Input from '../input';
 import '../../styles/main/card.scss';
+import CardHeader from './card-header';
 
 export interface CardProps {
+  id: number,
   title: string,
   issues: IssueModel[],
   index: number,
@@ -40,6 +42,7 @@ class Card extends React.Component<CardProps> {
 
   render() {
     const {
+      id,
       title,
       issues,
       index,
@@ -49,18 +52,14 @@ class Card extends React.Component<CardProps> {
     let button;
 
     if (index === 0) {
-      button = <Input onBlur={this.onClose}/>;
+      button = <Input onBlur={this.onClose} className="card__input"/>;
     } else {
-      button = <SelectContainer onClose={this.onClose} index={index} />;
+      button = <SelectContainer onClose={this.onClose} index={index} className="card__input"/>;
     }
 
     return (
       <section className="card">
-        <div className="card__header">
-          <span>{title}</span>
-          <Ellipsis />
-        </div>
-
+        <CardHeader title={title} id={id}/>
         <div className="container">
           <div className="card__list">
             {issues.map(issue =>

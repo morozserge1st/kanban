@@ -1,6 +1,7 @@
 import * as React from 'react';
 import '../../styles/dialog.scss';
 import { CloseButtonContainer, SaveButtonContainer } from './buttons-container';
+import { InputContainer } from './input-container';
 
 export interface DialogProps {
   open: boolean
@@ -17,7 +18,7 @@ const Dialog: React.FunctionComponent<DialogProps> = ({
             Create new list
           </div>
           <div className="dialog__content">
-            Create new list
+            <InputContainer className="dialog__input"/>
           </div>
           <div className="dialog__action">
             <SaveButtonContainer className="dialog__button">

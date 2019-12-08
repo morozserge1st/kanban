@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ButtonContainer } from './button-container';
 import Menu from './menu';
-import AddIcon from '../../icons/add-icon';
 import Profile from './profile';
 import '../../styles/header/toolbar.scss';
 
@@ -27,8 +26,7 @@ class Toolbar extends React.Component<{}, ToolbarState> {
     return (
       <div className="toolbar">
         <ButtonContainer className="toolbar__button">
-          <AddIcon />
-          <span>Create new list</span>
+          Create new list
         </ButtonContainer>
 
         <Profile

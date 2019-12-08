@@ -3,6 +3,7 @@ import { IssueModel } from '../../types/issue-model';
 
 export interface SelectProps {
   issues: IssueModel[],
+  className: string,
   onClose: (id: number) => void
 }
 
@@ -20,11 +21,12 @@ class Select extends React.Component<SelectProps> {
 
   render() {
     const {
-      issues
+      issues,
+      className
     } = this.props;
 
     return (
-      <form className="wrap">
+      <form className={className}>
         <select
           name=""
           id=""

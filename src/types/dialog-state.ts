@@ -1,3 +1,4 @@
 export type DialogState = {
-  open: boolean
+  open: boolean,
+  name: string
 }

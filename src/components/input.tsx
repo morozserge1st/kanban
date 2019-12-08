@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 export interface InputProps {
+  className: string,
   onBlur: (value: string) => void
 }
 
@@ -16,8 +17,10 @@ class Input extends React.Component<InputProps> {
   }
 
   render() {
+    const {className} = this.props;
+    
     return (
-      <form className="wrap">
+      <form className={className}>
         <input
           className="input"
           type="text"

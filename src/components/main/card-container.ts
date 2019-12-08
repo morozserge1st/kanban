@@ -9,6 +9,7 @@ export const CardContainer = connect(
     const disabled = ownProps.index > 0 ? !state.list.items[ownProps.index - 1].issues.length : false;
 
     return {
+      id: item.id,
       title: item.title,
       issues: item.issues,
       index: ownProps.index,
