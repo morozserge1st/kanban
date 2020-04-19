@@ -1,41 +1,38 @@
-import * as React from 'react';
-import { CardModel } from '../../types/card-model';
-import { CardContainer } from './card-container';
-import '../../styles/main/main.scss';
+import * as React from "react";
+import { useSelector } from "react-redux";
+import { ListModel } from "types/ListModel";
+import { RootState } from "types/RootState";
+import { Box } from "@material-ui/core";
+import List from "components/List";
 
-export interface MainProps {
-  items: CardModel[],
-  fetching: boolean
+interface MainProps {
+  items: ListModel[];
+  fetching: boolean;
 }
 
-const Main: React.FunctionComponent<MainProps> = ({
-  items,
-  fetching
-}) => (
-  <main className="main">
-    {fetching ? (
-      <div className="card--empty">
-        Downloading your list...
-      </div>
-    ) : (
-      <>
-        {items.length ? (
-          <>
-            {items.map((item, index) => (
-              <CardContainer
-                key={item.id}
-                index={index}
-              />
-            ))}
-          </>
-        ) : (
-          <div className="card--empty">
-            Add your first list
-          </div>
-        )}
-      </>
-    )}
-  </main>
+const Main: React.FC<MainProps> = ({ items, fetching }) => (
+  <Box
+    component="main"
+    mt={8}
+    p={2}
+    width="100%"
+    height="calc(100vh - 64px)"
+    boxSizing="border-box"
+    display="flex"
+  >
+    {items.map((item) => (
+      <List
+        id={item.id}
+        issues={item.issues}
+        title={item.title}
+        key={item.id}
+      />
+    ))}
+  </Box>
 );
 
-export default Main;
+export default function () {
+  const { items, fetching } = useSelector((state: RootState) => state.list);
+
+  return <Main items={items} fetching={fetching} />;
+}
